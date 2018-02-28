@@ -1,11 +1,11 @@
 <p id="notice" class="w3-panel"><%= notice %></p>
 
-<div class="w3-panel w3-aqua">
+<div class="w3-panel">
 
-<table class="w3-table-all">
+<table class="w3-table w3-bordered w3-responsive">
 <thead>
   <tr>
-    <th><h1>Product Details</h1></th>
+    <th><h3 class="montserrat b red lh-title">Product Details</h3></th>
     <th></th>
   </tr>
 </thead>
@@ -13,23 +13,23 @@
 <tr>
 
 <td>
-  <strong>Title:</strong>
+  <strong class="montserrat red">Title:</strong>
 </td>
 <td>
-  <%= @product.title %>
-</td>
-</tr>
-
-<td>
-  <strong>Description:</strong>
-</td>
-<td>
-  <%= sanitize(strip_tags(@product.description)) %>
+  <p class="space-mono red f5 lh-copy"><%= @product.title %>
 </td>
 </tr>
 
 <td>
-  <strong>Image url:</strong>
+  <strong class="montserrat red">Description:</strong>
+</td>
+<td>
+  <p class="eb-garamond f5 lh-copy"><%= sanitize(strip_tags(@product.description)) %></p>
+</td>
+</tr>
+
+<td>
+  <strong class="montserrat red">Image URL:</strong>
 </td>
 <td>
   <%= image_tag(@product.image_url) %>    
@@ -37,20 +37,20 @@
 </tr>
 
 <td>
-  <strong>Price:</strong>
+  <strong class="montserrat red">Price:</strong>
 </td>
 <td>
-  <%= number_to_currency(@product.price) %>    
+  <p class="space-mono red f6 lh-copy"><%= number_to_currency(@product.price) %></p>    
 </td>
 </tr>
 
 
 <tr>
 <td>
-<%= link_to 'Edit', edit_product_path(@product) ,class:"w3-button w3-light-gray w3-border" %> 
+<%= link_to 'Edit', edit_product_path(@product) ,class:"space-mono w3-mobile w3-button w3-red w3-border w3-border-red w3-hover-white w3-round-large" %> 
 </td>
 <td>
-  <%= link_to 'Back', products_path , class:"w3-button w3-light-gray w3-border" %>
+  <%= link_to 'Back', products_path , class:"space-mono w3-mobile w3-button w3-red w3-border w3-border-red w3-hover-white w3-round-large" %>
 </td>
 </tr>
 </tbody>

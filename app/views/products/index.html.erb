@@ -1,9 +1,9 @@
 <p id="notice" class="w3-panel"><%= notice %></p>
 
-<h1>Products</h1>
+<h1 class="montserrat b red">Products</h1>
 
-<table class="w3-table-all">
-  <thead>
+<table class="w3-table w3-bordered w3-responsive">
+  <thead class="montserrat b w3-centered red">
     <tr>
       <th>Title</th>
       <th>Description</th>
@@ -13,16 +13,16 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class="">
     <% @products.each do |product| %>
       <tr>
-        <td><h4><%= sanitize(product.title) %></h4></td>
-        <td width="50%"><%= sanitize(strip_tags(product.description)) %></td>
-        <td><%= image_tag(product.image_url) %></td>
-        <td><%= number_to_currency(product.price) %></td>
-        <td><%= link_to 'Show', product , class:"w3-button w3-light-gray w3-border" %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) , class:"w3-button w3-light-gray w3-border" %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure? Really, really sure?' } , class:"w3-button w3-light-gray w3-border" %></td>
+        <td><h6 class="montserrat b lh-title red"><%= sanitize(product.title) %></h6></td>
+        <td width="50%"><p class="eb-garamond f4 lh-copy"><%= sanitize(strip_tags(product.description)) %></td>
+        <td><%= image_tag(product.image_url) %></p></td>
+        <td><p class="space-mono tracked red f5 lh-copy"><%= number_to_currency(product.price) %></p></td>
+        <td><%= link_to 'Show', product , class:"space-mono w3-mobile w3-button w3-red w3-border w3-border-red w3-hover-white w3-round-large" %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) , class:"space-mono w3-mobile w3-button w3-red w3-border w3-border-red w3-hover-white w3-round-large" %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure? Really, really sure?' } , class:"space-mono w3-mobile w3-button w3-red w3-border w3-border-red w3-hover-white w3-round-large" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Product', new_product_path , class:"w3-button w3-light-gray w3-border" %>
+<%= link_to 'New Product', new_product_path , class:"space-mono w3-mobile w3-button w3-red w3-border w3-border-red w3-hover-white w3-round-large" %>
