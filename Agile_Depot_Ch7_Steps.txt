@@ -6,7 +6,7 @@ Controller Test - Built-in
 
 found in: ...test/controllers/...
 
-Add data validations to the product model class to result in for product.rb:
+Add data validations to the product model class to result in for models/concerns/product.rb:
 
 class Product < ActiveRecord::Base
   validates :title, :description, :image_url, presence: true
