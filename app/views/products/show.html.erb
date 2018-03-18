@@ -1,58 +1,99 @@
-<p id="notice" class="w3-panel"><%= notice %></p>
+<!--PRODUCTS Show (Appears when you "add to cart")-->
+<!--Header-->
+<header class="pt6 bg-photoshop vh-90 dt w-100 bb bw2 b--red shadow-4">
+    <div class="vh-75 dtc v-btm-ns v-mid tl pa4 pb6 pl6-m ph7-l">
+      
+      <p id="notice" class="f3 w3-text-red mx-multiply playfair-display" ><%= notice %></p>
+      
+      <h1 class="playfair-display black-70 fw7 b kern ligatures f-headline-ns f-subheadline-m measure lh-title pb4">
+        <span class="dn-s bg-blur-5 bg-white-70 lh-solid ph4 pb3 bt bw3 b--red shadow-4 w3-animate-top">
+          &nbsp;Cart.&nbsp;
+        </span>
+        
+         <span class="dn-ns mx-multiply lh-solid pb3 red w3-animate-top">
+          &nbsp;Cart.&nbsp;
+        </span>
+      </h1>
+      
+      <!--Large Breakpoints-->
+      <h5 class="space-mono ttu mt4 f6 black-80 tracked lh-copy w3-animate-top">
+        <span class="dn-s mt3 pa2 bg-blur-5 bg-white-70 ba bw1 b--red shadow-4">
+          Review your order below!
+        </span>
+        
+        <!--Medium & Small Breakpoints-->
+        <span class="dn-ns space-mono dn-l mv2 pv2 lh-title">
+          Review your order<br class="dn-ns">
+          then check out!
+        </span>
+      </h5>
+      <br>
+        <i class="red w3-animate-opacity fl w30 pa1 material-icons">arrow_downward</i>
+    </div>
+</header>
 
-<div class="w3-panel">
-
-<table class="w3-table w3-bordered w3-responsive">
-<thead>
-  <tr>
-    <th><h3 class="montserrat b red lh-title">Product Details</h3></th>
-    <th></th>
-  </tr>
-</thead>
-<tbody>
-<tr>
-
-<td>
-  <strong class="montserrat red">Title:</strong>
-</td>
-<td>
-  <p class="space-mono red f5 lh-copy"><%= @product.title %>
-</td>
-</tr>
-
-<td>
-  <strong class="montserrat red">Description:</strong>
-</td>
-<td>
-  <p class="eb-garamond f5 lh-copy"><%= sanitize(strip_tags(@product.description)) %></p>
-</td>
-</tr>
-
-<td>
-  <strong class="montserrat red">Image URL:</strong>
-</td>
-<td>
-  <%= image_tag(@product.image_url) %>    
-</td>
-</tr>
-
-<td>
-  <strong class="montserrat red">Price:</strong>
-</td>
-<td>
-  <p class="space-mono red f6 lh-copy"><%= number_to_currency(@product.price) %></p>    
-</td>
-</tr>
-
-
-<tr>
-<td>
-<%= link_to 'Edit', edit_product_path(@product) ,class:"space-mono w3-mobile w3-button w3-red w3-border w3-border-red w3-hover-white w3-round-large" %> 
-</td>
-<td>
-  <%= link_to 'Back', products_path , class:"space-mono w3-mobile w3-button w3-red w3-border w3-border-red w3-hover-white w3-round-large" %>
-</td>
-</tr>
-</tbody>
-</table>
+<!--Table of Products (Dummy Cart)-->
+<article class="cf ph3 ph5-l ph4-m pv6">
+  <div class="flex justify-center pt5">
+    <!--Table width-->
+    <div class="w-50-l w-60-m w-90">
+      <table class=" w3-animate-bottom pt3 w3-responsive pb6">
+        <!--<thead>-->
+        <!--  <tr>-->
+        <!--    <th><h3 class="raleway fw6 f5 b red lh-title">Product Details</h3></th>-->
+        <!--    <th></th>-->
+        <!--  </tr>-->
+        <!--</thead>-->
+        <tbody>
+        <tr>
+          <!--<td>-->
+          <!--  <strong class="raleway fw6 f5 red">Title:</strong>-->
+          <!--</td>-->
+          <td>
+            <span class="playfair-display red f1 lh-copy"><%= @product.title %></span>
+          </td>
+        </tr>
+        
+        <tr>
+          <!--<td>-->
+          <!--  <strong class="v-top raleway fw6 f5 red measure">Description:</strong>-->
+          <!--</td>-->
+          <td class="ph4-ns pt4-ns">
+            <span class="eb-garamond f4 lh-copy measure"><%= sanitize(strip_tags(@product.description)) %></span>
+          </td>
+        </tr>
+        
+        <tr>
+          <!--<td>-->
+          <!--  <strong class="raleway fw6 f5 red">Image URL:</strong>-->
+          <!--</td>-->
+          <td class="ph4-ns pt4-ns">
+            <span class="bwneg"><%= image_tag(@product.image_url) %>    
+          </td>
+        </tr>
+        
+        <tr>
+          <!--<td>-->
+          <!--  <strong class="raleway fw6 f5 red">Price:</strong>-->
+          <!--</td>-->
+          <td>
+            <p class="space-mono red f4 lh-copy"><%= number_to_currency(@product.price) %></p>    
+          </td>
+        </tr>
+        
+        
+        <tr>
+        <td>
+        <span class="bt bw1 pv2">
+          <%= link_to 'Edit', edit_product_path(@product) ,
+          class:"ph4-ns ma1 ttu tracked dib link w3-text-red grow w3-hover-none w3-hover-text-black f6 space-mono no-underline" %> 
+          <%= link_to 'Back', products_path , 
+          class:"ph4-ns ma1 ttu tracked dib link w3-text-red grow w3-hover-none w3-hover-text-black f6 space-mono no-underline" %>
+        </span>
+        </td>
+        </tr>
+        </tbody>
+      </table>
+   </div>
 </div>
+</article>

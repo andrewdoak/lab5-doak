@@ -1,31 +1,133 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Textbook Store</title>
+    <title>Responsive Styling Starter</title>
     
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
- 
+   <!--Import Google MATERIAL ICONS-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   </head>
 
-  <body class="w3-container">
-
-    <div class="fixed w3-bar bg-white-90 space-mono bb bw1 shadow-4 b--black mb2 pv2">
-      <a href="/" class="w3-bar-item w3-button w3-hover-white w3-hover-text-red"><%= image_tag 'store.svg', alt: 'Home', height: '28', width: '28', style: 'display: block; margin-left: auto; margin-right: auto; margin-bottom: none; margin-top: none' %></a>
-      <a href="/static_pages/home" class="w3-bar-item w3-button w3-hover-white w3-hover-text-red">Home</a>
-      <a href="/" class="w3-bar-item w3-button w3-hover-white w3-hover-text-red">Shop</a>
-      <a href="/static_pages/help" class="w3-bar-item w3-button w3-hover-white w3-hover-text-red">Help</a>
-      <a href="/static_pages/about" class="w3-bar-item w3-button w3-hover-white w3-hover-text-red">About</a>
-      <li href="#" class="w3-bar-item w3-black w3-text-white montserrat b">TEMPORARY NAV SEPARATOR</li>
-      <a href="/products" class="w3-bar-item w3-button w3-hover-white w3-hover-text-red">Manage Products</a>
+ <nav class="dn-s-m z-4 fixed bg-white-70 bg-blur-5 dt w-100 border-box mt3 pv3 ph4-ns bb bw0 b--red shadow-4">
+      <!--Left Nav Section (20%)-->
+      <a href="/" class="dtc v-mid w3-hover-none link dim w-20 tr f6"><%= image_tag 'home-black-logotype.svg', 
+      alt: 'Store Home', height: '32', style: 'display: block; margin-bottom: none; margin-top: none' %></a>
+      
+      <!--Right Nav Section (80%)-->
+      <div class="dtc v-mid w-80 tr space-mono ttu tracked f6">
+        <a href="/" aria-label="Shop" class="f7-m dtc tc w3-button w3-hover-none w3-text-red w3-hover-text-light-gray">Shop</a>
+        <a href="/static_pages/home" aria-label="Home" class="f7-m dtc tc w3-button w3-hover-none w3-text-red w3-hover-text-light-gray">Home</a>
+        <a href="/static_pages/about" aria-label="About" class="f7-m dtc tc w3-button w3-hover-none w3-text-red w3-hover-text-light-gray">About</a>
+        <a href="/static_pages/help" aria-label="Help" class="f7-m dtc tc w3-button w3-hover-none w3-text-red w3-hover-text-light-gray">Help</a>
+      </div>
+    </nav>
+    
+<!--Mobile Menu MDL-->
+    <!--Top Menu-->
+    <nav class="dn-l z-4 dt fixed space-mono bg-red-90 bg-blur-5 dt w-100 border-box mt0 pv3 mb1 bb bw1 b--dark-red shadow-4">
+      <a href="/" 
+        class="dtc v-mid w3-hover-none link dim w-50 tr f6 f5-ns pl4">
+        <%= image_tag 'home-white-logotype.svg', alt: 'Home', height: '28', style: 'display: block; margin-bottom: none; margin-top: none' %>
+      </a>
+    </nav>
+    
+    <div class="dn-l demo-layout-transparent mdl-layout mdl-js-layout">
+      <div class="mdl-layout__drawer bg-blur-5 bg-white-80">
+        <nav class="mdl-navigation bg-blur-5">
+          <a href="/static_pages/home" aria-label="Home" 
+            class="playfair-display fw9 f3 dtc tc dim grow w3-button w3-text-red w3-hover-none w3-hover-text-light-gray mv4">
+              <%= image_tag 'home-red-logotype.svg', alt: 'Store Home', height: '32', style: '' %></a>
+          <a href="/" aria-label="Shop Now" 
+            class="playfair-display fw9 f3 dtc tc grow w3-button w3-text-black w3-hover-none w3-hover-text-light-gray">Shop</a>
+          <a href="/static_pages/about" aria-label="About" 
+            class="playfair-display fw9 f3 dtc tc grow w3-button w3-text-black w3-hover-none w3-hover-text-light-gray">About</a>
+          <a href="/static_pages/help" aria-label="Help" 
+            class="playfair-display fw9 f3 dtc tc grow w3-button w3-text-black w3-hover-none w3-hover-text-light-gray">Help</a>
+        </nav>
+      </nav>
+    </div>
+  </div>
+  
+        <!--MATERIAL DESIGN LITE Dynamic Page App DOM fix-->
+        <script>
+          setInterval("upgradeMDL();", 100);
+          function upgradeMDL() {
+            componentHandler.upgradeDom();
+            //componentHandler.upgradeDom();
+            //componentHandler.upgradeAllRegistered();
+          }
+        </script>
+      </div>
     </div>
 
-   <div class="w3-container mt5">
-    <%= yield %>
-   </div>    
+  <!--MATERIAL DESIGN LITE Fix for dynamic sites.-->
+   <main class="mdl-layout__content w-100">
+      <div class="page-content">
+        <%= yield %>
+      </div>
+   </div>
+  </main>
+  
+    <footer style="" class="pv4 ph3-ns ph1 ph3-ns tc bg-graph-navy bt bw1 b--red shadow-1">
+      <div class="dt w-100">
+      <!--EMAIL + IMPRINT-->
+      <!--Left 20%-->
+        <div class="dtc v-top w-30-ns w-20 pl2 pl3-ns">
+          <!--EMAIL Contact-->
+          <a href="mailto:" 
+            class="dt dtl raleway tracked red f4 f3-ns lh-solid link red db w3-text-red w3-hover-none pb3 pl1 mt0">
+            <span class="pb2 bb bw1 b--red">rubylife@example.com</span></a>
+          
+          <!--IMPRINT-->
+          <!--HTML SYMBOLS! => https://www.toptal.com/designers/htmlarrows/symbols/-->
+          <p class="dtc tl space-mono near-black dtc f6-l f7 lh-copy pt2 pl1">Made in Chicago &#10052;
+            
+            <!--Creative Commons Logo-->
+            <!--https://css-tricks.com/scale-svg/-->
+            <svg class="dn-s dib ma0 h1 w2-ns h2-ns" fill="currentColor" xmlns="http://www.w3.org/2000/svg" version="1" viewBox="-10 0 140 80" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><circle cx="37.78" cy="28.5" r="28.84" fill="#FFFFFF"/><path d="M37.44-3.5c8.95 0 16.57 3.13 22.86 9.37 3 3.01 5.3 6.45 6.86 10.32A32.58 32.58 0 0 1 69.5 28.5c0 4.38-.77 8.49-2.32 12.31a29.38 29.38 0 0 1-6.82 10.15 32.89 32.89 0 0 1-10.63 7.08 31.86 31.86 0 0 1-24.43.03 32.19 32.19 0 0 1-10.4-7.03A31.39 31.39 0 0 1 5.5 28.5c0-4.23.8-8.3 2.43-12.2 1.62-3.9 3.97-7.4 7.06-10.49C21.07-.39 28.56-3.5 37.44-3.5zm.12 5.77c-7.32 0-13.47 2.56-18.46 7.66a27.51 27.51 0 0 0-5.8 8.6 25.2 25.2 0 0 0-2.03 9.97c0 3.43.68 6.73 2.03 9.91a26.5 26.5 0 0 0 5.8 8.52c2.51 2.5 5.35 4.4 8.51 5.71a25.83 25.83 0 0 0 19.92-.03 27.64 27.64 0 0 0 8.71-5.76c5-4.88 7.49-11 7.49-18.35 0-3.54-.65-6.9-1.95-10.06A25.59 25.59 0 0 0 56.13 10a25.32 25.32 0 0 0-18.57-7.72zm-.4 20.92l-4.3 2.23a4.4 4.4 0 0 0-1.68-2 3.8 3.8 0 0 0-1.85-.58c-2.86 0-4.29 1.89-4.29 5.66a7 7 0 0 0 1.08 4.11 3.66 3.66 0 0 0 3.2 1.55c1.87 0 3.19-.92 3.95-2.74l3.94 2a9.4 9.4 0 0 1-8.4 5.02c-2.85 0-5.16-.87-6.91-2.62-1.75-1.76-2.63-4.2-2.63-7.32 0-3.05.89-5.46 2.66-7.25a9.05 9.05 0 0 1 6.71-2.69c3.96 0 6.8 1.54 8.52 4.63zm18.45 0l-4.23 2.23a4.4 4.4 0 0 0-1.68-2 3.89 3.89 0 0 0-1.92-.58c-2.85 0-4.28 1.89-4.28 5.66a7 7 0 0 0 1.08 4.11 3.66 3.66 0 0 0 3.2 1.55c1.87 0 3.18-.92 3.94-2.74l4 2a9.82 9.82 0 0 1-3.54 3.68 9.23 9.23 0 0 1-4.85 1.34c-2.9 0-5.21-.87-6.94-2.62-1.74-1.76-2.6-4.2-2.6-7.32 0-3.05.88-5.46 2.65-7.25a9.05 9.05 0 0 1 6.72-2.69c3.96 0 6.78 1.54 8.45 4.63z"/></svg>
+            <br class=""><span class="raleway ttu tracked">2018</span>
+        </div>
+        
+        <!--PHONE + Address-->
+        <!--Left 20%-->
+        <div class="dn-s mb0-ns mb3 tr dtc v-top pt1-ns w-70-ns w-100">
+          <!--EMAIL Contact-->
+          <article class="dtc tr space-mono w-50 dib-ns w-auto-ns mr5-l mb4 pr0 mr0">
+            <!--<h4 class="eb-garamond red f5 f4-l">Chicago HQ</h4>-->
+              <span class="f7 f6-l db black-70">237 S. Wabash</span>
+              <span class="f7 f6-l black-70">Chicago, IL 60605 </span>
+              <a class="f5 raleway tracked link grow red db pv3 w3-text-red w3-hover-none" title="Call Us!" 
+              href="tel:+17735550100">+1 773-555-0100
+            </a>
+        </article>
+        </div>
+      </div>
+      
+      <div class="mx-multiply">
+        <a class="dib mh3-ns mh1 tc grow w3-button w3-text-black w3-hover-none w3-hover-text-red" 
+          href="https://github.com/andrewdoak" title="GitHub">
+          <svg class="dib h1 w2-ns h2-ns" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.083-.202-.358-1.015.077-2.117 0 0 .672-.215 2.2.82.638-.178 1.323-.266 2.003-.27.68.004 1.364.092 2.003.27 1.527-1.035 2.198-.82 2.198-.82.437 1.102.163 1.915.08 2.117.513.56.823 1.274.823 2.147 0 3.073-1.87 3.75-3.653 3.947.287.246.543.735.543 1.48 0 1.07-.01 1.933-.01 2.195 0 .215.144.463.55.385C13.71 14.53 16 11.534 16 8c0-4.418-3.582-8-8-8"/></svg>
+          <span class="dn-s pt1 f7 db space-mono">GitHub</span>
+        </a>
+        
+        
+        <a class="dib mh3-ns mh1 tc grow w3-button w3-text-black w3-hover-none w3-hover-text-red" 
+          href="https://www.heroku.com/home" title="Heroku">
+          <svg class="dib h1 w2-ns h2-ns" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"> <path d="M20.61 0H3.39c-1.2 0-2.16.96-2.16 2.16v19.68c0 1.2.96 2.16 2.16 2.16h17.22c1.2 0 2.16-.96 2.16-2.16V2.16C22.77.96 21.8 0 20.6 0zm.96 21.84c0 .54-.42.96-.96.96H3.39a.95.95 0 0 1-.96-.96V2.16c0-.54.42-.96.96-.96h17.22c.54 0 .96.42.96.96v19.68zM6.63 20.4l2.7-2.4-2.7-2.4v4.8zm9.72-9.72a3.92 3.92 0 0 0-2.88-1.08c-1.62 0-3.3.42-4.5.84V3.6h-2.4v10.38l1.68-.78s2.76-1.26 5.16-1.26c1.2 0 1.5.66 1.5 1.26v7.2h2.4v-7.2c.06-.18.06-1.5-.96-2.52zM13.17 7.5h2.4a7.24 7.24 0 0 0 1.8-3.9h-2.4a8.88 8.88 0 0 1-1.8 3.9z"/></svg>
+          <span class="dn-s pt1 f7 db space-mono">Heroku</span>
+        </a>
+        
+        <a class="dib mh3-ns mh1 tc grow w3-button w3-text-black w3-hover-none w3-hover-text-red mx-multiply" 
+          href="https://medium.com/ruby-on-rails" title="Medium">
+          <svg class="dib h1 w2-ns h2-ns" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M11.824 12.628l-.276.45.798.398 2.744 1.372c.15.076.294.11.418.11.278 0 .467-.177.467-.492V5.883l-4.15 6.745zm4.096-8.67c-.004-.003 0-.01-.003-.012l-4.825-2.412c-.06-.03-.123-.038-.187-.044-.016 0-.03-.01-.047-.01-.184 0-.368.092-.467.254l-.24.39-.5.814-1.89 3.08 1.89 3.076.5.813.5.812.59.95 4.71-7.64c.02-.03.01-.06-.02-.08zm-6.27 7.045L7.17 6.97l-.295-.477-.294-.477-.25-.416v4.867l3.32 1.663.5.25.5.25-.5-.813-.5-.813zM.737 1.68L.59 1.608c-.085-.042-.166-.062-.24-.062-.206 0-.35.16-.35.427v10.162c0 .272.2.594.442.716l4.145 2.08c.107.06.208.08.3.08.257 0 .438-.2.438-.53V4.01c0-.02-.012-.04-.03-.047L.738 1.68z"/></svg>
+          <span class="dn-s pt1 f7 db space-mono">Medium</span>
+        </a>
+      </div>
+  </footer>
 
   </body>
 </html>

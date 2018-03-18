@@ -1,6 +1,46 @@
-<h1 class="montserrat b red">Editing Product</h1>
+<!--PRODUCTS Edit (Appears when you click "Edit in Prodicts Page")-->
+<header class="pt6 bg-photoshop vh-90 dt w-100 bb bw2 b--red shadow-4">
+    <div class="vh-75 dtc v-btm-ns v-mid tl pa4 pb6 pl6-m ph7-l">
+      
+      <h1 class="playfair-display black-70 fw7 b kern ligatures f-headline-ns f-subheadline-m measure lh-title pb4">
+        <span class="dn-s bg-blur-5 bg-white-70 lh-solid ph4 pb3 bt bw3 b--red shadow-4 w3-animate-top">
+          &nbsp;Edit Product.&nbsp;
+        </span>
+        
+         <span class="dn-ns mx-multiply lh-solid pb3 red w3-animate-top">
+          &nbsp;Edit Product.&nbsp;
+        </span>
+      </h1>
+      
+      <!--Large Breakpoints-->
+      <h5 class="space-mono ttu mt4 f6 black-80 tracked lh-copy w3-animate-top">
+        <span class="dn-s mt3 pa2 bg-blur-5 bg-white-70 ba bw1 b--red shadow-4">
+          Make changes below, but do so carefully!
+        </span>
+        
+        <!--Medium & Small Breakpoints-->
+        <span class="dn-ns space-mono dn-l mv2 pv2 lh-title">
+          Make changes below, <br class="dn-ns">
+          but do so carefully
+        </span>
+      </h5>
+      <br>
+        <i class="red w3-animate-opacity fl w30 pa1 material-icons">arrow_downward</i>
+    </div>
+</header>
 
-<%= render 'form', product: @product %>
-
-<%= link_to 'Show', @product , class:"space-mono w3-mobile w3-button w3-red w3-border w3-border-red w3-hover-white w3-round-large" %> |
-<%= link_to 'Back', products_path , class:"space-mono w3-mobile w3-button w3-red w3-border w3-border-red w3-hover-white w3-round-large" %>
+<article class="cf ph3 ph5-l ph4-m pv6">
+    <div class="flex justify-center pt5">
+        <!--Table width-->
+        <div class="w-50-l w-60-m w-90">
+        <%= render 'form', product: @product %>
+        
+        <span class="bt bw1 pv2">
+            <%= link_to 'Show', @product , 
+            class:"ph4-ns ma1 ttu tracked dib link w3-text-black grow w3-hover-none w3-hover-text-red f6 space-mono no-underline" %>
+            <%= link_to 'Back', products_path , 
+            class:"ph4-ns ma1 ttu tracked dib link w3-text-black grow w3-hover-none w3-hover-text-red f6 space-mono no-underline" %>
+        </span>    
+        </div>
+    </div>
+</article>

@@ -1,28 +1,68 @@
-<h1 class="montserrat b red">Store</h1>
-<p class="space-mono f5 red">Find me in app/views/store/index.html.erb</p>
+<!--STORE Page-->
+<!--Header requires backgrounds.css to work!-->
+<header class="pt6 bg-graph-navy vh-80 dt w-100 bb bw2 b--red shadow-4">
+    <div class="vh-75 dtc v-btm-ns tl pa4 pb6 ph5-m ph7-l">
+      <h1 class="playfair-display black-70 fw7 b kern ligatures f-subheadline f-headline-l measure-narrow lh-title pb4">
+        <!--Large Breakpoints-->
+        <span class="dn-s bg-blur-5 bg-white-70 lh-solid ph4 pb3 bt bw3 b--red shadow-4 w3-animate-opacity">
+          &nbsp;Bookshop.&nbsp;
+        </span>
+        
+        <!--Small Breakpoints-->
+        <span class="dn-ns mx-multiply lh-solid pb2 bb bw2 b--red red w3-animate-top">
+          &nbsp;Bookshop.&nbsp;
+        </span>
+      </h1>
+      
+      <h5 class="space-mono ttu mt4 mt6-s f6 black-80 tracked lh-copy">
+        <!--Large Breakpoints-->
+        <span class="dn-s mt3 pa2 bg-blur-5 bg-white-70 ba bw1 b--red shadow-4 w3-animate-opacity">
+         <span class="red">Up your Ruby game.</span> It happens right here.
+        </span>
+        
+        <!--Medium & Small Breakpoints-->
+        <span class="dn-ns montserrat red f4 dn-l mv2 pv2 lh-copy ttc w3-animate-top">
+           <span class="space-mono black ttu"> Up your Ruby game. </span> 
+               <br class="dn-ns">
+           <span class="f6"> It happens right here. </span>
+        </span>
+      </h5>
+      <br>
+        <i class="red w3-animate-bottom fl f1-l f2 w30 pa1 material-icons">arrow_downward</i>
+    </div>
+</header>
 
-<table class="w3-table w3-bordered w3-responsive">
-  <thead class="montserrat b w3-centered red">
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Image</th>
-      <th>Price</th>
-    </tr>
-  </thead>
-
-  <tbody class="">
-    <% @products.each do |product| %>
-      <tr>
-        <td class=""><h6 class="montserrat b lh-title red"><%= product.title %></h6></td>
-        <td width="50%"><p class="eb-garamond f4 lh-copy"><%= sanitize(strip_tags(product.description)) %></p></td>
-        <td><%= image_tag(product.image_url) %></td>
-        <td class="">
-          <p class="space-mono tracked red f5 lh-copy"><%= number_to_currency(product.price) %></p>
-          <hr />
-          <%= link_to 'Add to Cart', product , class:"space-mono w3-mobile w3-button w3-red w3-border w3-border-red w3-hover-white w3-round-large" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<!--TABLE of Products-->
+<article class="cf ph3 ph5-l ph4-m pv6">
+  <div class="flex justify-center pt5">
+    <!--Table width-->
+    <div class="w-80-ns w-90">
+      <table class=" w3-animate-bottom pt3 w3-responsive pb6">
+            <!--<tr>-->
+            <!--  <th>Title</th>-->
+            <!--  <th>Description</th>-->
+            <!--  <th>Cover</th>-->
+            <!--  <th>Price</th>-->
+            <!--</tr>-->
+          </thead>
+      
+        <tbody class="">
+          <% @products.each do |product| %>
+            <tr>
+              <td width="20%" class=""><h6 class="pt4 v-top space-mono ttu lh-copy red"><%= product.title %></h6></td>
+              <td width="50%"><p class="eb-garamond ligatures f4 lh-copy"><%= sanitize(strip_tags(product.description)) %></p></td>
+              <td width="20%" class="bwneg dtc tc"><%= image_tag(product.image_url) %></td>
+              <td width="10%" class="">
+                <p class="space-mono tracked red f5 lh-copy"><%= number_to_currency(product.price) %></p>
+                <hr />
+                <%= link_to 'Add to Cart', product , 
+                class:"space-mono ttu w3-mobile w3-button br-pill b--red grow w3-white w3-hover-red" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+    </table>
+  </div>
+</div>
+</article>
 

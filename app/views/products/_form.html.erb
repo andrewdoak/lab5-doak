@@ -12,26 +12,28 @@
   <% end %>
 
   <div class="w3-panel">
-    <%= f.label :title, class:"montserrat tracked lh-copy" %>
+    <%= f.label :title, class:"playfair-display fw6 f1 lh-copy" %>
     <%= f.text_field :title , class:"space-mono red w3-input w3-border" %>
   </div>
 
   <div class="w3-panel">
-    <%= f.label :description, class:"montserrat tracked lh-copy" %>
+    <%= f.label :description, class:"playfair-display fw6 f1 lh-copy" %>
     <%= f.text_area :description , class:"space-mono red w3-input w3-border" %>
   </div>
 
   <div class="w3-panel">
-    <%= f.label :image_url, class:"montserrat tracked lh-copy" %>
+    <%= f.label :image_url, class:"playfair-display fw6 f1 lh-copy" %>
     <%= f.text_field :image_url , class:"space-mono red w3-input w3-border" %>
   </div>
 
   <div class="w3-panel">
-    <%= f.label :price, class:"montserrat tracked lh-copy" %>
+    <%= f.label :price, class:"playfair-display fw6 f1 lh-copy" %>
     <%= f.text_field :price , class:"space-mono red w3-input w3-border" %>
   </div>
 
   <div class="actions pb3 pl3">
-    <%= f.submit :Enter, class:"space-mono w3-mobile w3-button w3-red w3-border w3-border-red w3-hover-white w3-round-large" %>
+    <%= f.submit :Enter, 
+    class:"shadow-1 ttu f6 space-mono w3-mobile w3-button br-pill grow
+    w3-white w3-border w3-border-red w3-text-red w3-hover-red" %>
   </div>
 <% end %>
