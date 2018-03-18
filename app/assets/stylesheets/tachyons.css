@@ -5024,6 +5024,10 @@ code {
         display: none;
     }
     
+    .db-s {
+        display: block
+    }
+    
     .bw0-s {
         border-width: 0
     }
